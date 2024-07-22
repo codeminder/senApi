@@ -19,6 +19,7 @@ This project is a web application built with FastAPI that performs sentiment ana
 
 ## Project Structure
 
+```bash
 SentimentAPI/
     ├── app/
     │   ├── init.py
@@ -31,6 +32,7 @@ SentimentAPI/
     │       └── index.html
     ├── Dockerfile
     └── docker-compose.yml
+```
 
 ## Setup Instructions
 
