@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form action="/" method="post">
+        <textarea name="text" rows="4" cols="50">{{ text if text else '' }}</textarea>
+        <br>
+        <input type="submit" value="Analyze">
+    </form>
+
+    {% if errors %}
+    <div style="color: red;">
+        <h2>Errors:</h2>
+        <ul>
+            {% for error in errors %}
+            <li>{{ error['loc'][0] }}: {{ error['msg'] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if sentiment %}
+    <h2>Analysis Result</h2>
+    <p><strong>Text:</strong> {{ text }}</p>
+    <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+    {% endif %}
+</body>
+</html>
